@@ -1,5 +1,5 @@
 #ifndef __PILA_MAX_COLA_H__
-#define __PILA_MAX_Cola_H__
+#define __PILA_MAX_COLA_H__
 
 #include<cola.h>
 
@@ -17,7 +17,7 @@ private:
 
   PilaMaxCola(const PilaMaxCola & copia): pila(copia.pila) {};
    
-  PilaMaxCola& operator=(const PilaMax& otra);
+  PilaMaxCola& operator=(const PilaMaxCola& otra);
   
   int getUsed() const;
 
