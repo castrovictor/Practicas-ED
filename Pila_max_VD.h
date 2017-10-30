@@ -14,7 +14,9 @@ public:
   PilaMax() {};
 
   PilaMax(const PilaMax & copia): pila(copia.pila) {};
-
+   
+  PilaMax& operator=(const PilaMax& otra);
+  
   int getUsed() const;
 
   bool empty() const;
@@ -23,6 +25,10 @@ public:
 
   void pop();
 
-  elemento top();
+  elemento& top();
+  
+  const elemento& top() const;
+  
+  
 
 }
