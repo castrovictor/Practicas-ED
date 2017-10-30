@@ -10,6 +10,11 @@ int PilaMax::getUsed() const {
   return pila.getUtilizados();
 }
 
+PilaMax& operator=(const PilaMax& otra) {
+  pila = otra.pila();
+}  
+
+
 
 void PilaMax::push(int elem) {
   elemento aux;
@@ -31,7 +36,12 @@ void PilaMax::pop() {
   pila.deleteItem(id);
 }
 
-elemento PilaMax::top() {
+elemento& PilaMax::top() {
+  assert(!empty());
+  return pila[getUsed()-1];
+}
+
+const elemento& PilaMax::top() const {
   assert(!empty());
   return pila[getUsed()-1];
 }
