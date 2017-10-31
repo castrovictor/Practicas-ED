@@ -8,16 +8,16 @@ struct elemento {
   int max;
 };
 
-class PilaMaxCola(){
+class PilaMax(){
 private:
   Cola<elemento> pila;
   
  public:
-  PilaMaxCola(){};
+  PilaMax(){};
 
-  PilaMaxCola(const PilaMaxCola & copia): pila(copia.pila) {};
+  PilaMax(const PilaMax & copia): pila(copia.pila) {};
    
-  PilaMaxCola& operator=(const PilaMaxCola& otra);
+  PilaMax& operator=(const PilaMax& otra);
   
   int getUsed() const;
 
