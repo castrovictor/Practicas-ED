@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cassert>
+#include "Pila_max_VD.h"
 using namespace std;
 
 bool PilaMax::empty() const {
@@ -14,8 +15,6 @@ PilaMax& operator=(const PilaMax& otra) {
   pila = otra.pila();
 }  
 
-
-
 void PilaMax::push(int elem) {
   elemento aux;
   aux.dato = elem;
@@ -24,8 +23,8 @@ void PilaMax::push(int elem) {
     aux.max = elem;
   } else {
     int id = getUsed()-1;
-    if(pila[id] > elem)
-      elem = pila[id];
+    if(pila[id].max > elem)
+      elem = pila[id].max;
     aux.max = elem;
   }
   pila.addItem(aux);
