@@ -4,37 +4,27 @@
 
 using namespace std;
 
-PilaMaxCola& PilaMaxCola::operator=(const PilaMaxCola& otra){
+PilaMax& PilaMax::operator=(const PilaMax& otra){
   pila = otra.pila;
  }
 
 
- int PilaMaxCola::getUsed() const {
+ int PilaMax::getUsed() const {
    return pila.num_elementos();
  }
 
- bool PilaMaxCola::empty() const {
+ bool PilaMax::empty() const {
    return pila.vacia();
  }
 
 
- void PilaMaxCola::push(elemento insertado) {
-   Cola<elemento> aux;
-   int n = getUsed();
-   aux.poner(insertado);
-   /*
-   Habría que coger un elemento del tope, insertarlo y borrarlo para poder coger del tope otra vez
-   */
-   for(int i = 1; i <= n; i++) {
-     aux.poner(top());
-     pila.pop();
-   }
-   pila = aux;
+ void PilaMax::push(elemento insertado) {
+   pila.poner(insertado);
  }
 
 
 
- void PilaMaxCola::pop() {
+ void PilaMax::pop() {
   Cola<elemento> aux;
   int n = getUsed();
   for(int i = 1; i < n; i++)
@@ -43,7 +33,7 @@ PilaMaxCola& PilaMaxCola::operator=(const PilaMaxCola& otra){
  }
 
 
- elemento& PilaMaxCola::top() {
+ elemento& PilaMax::top() {
    Cola<elemento> aux;
    aux = pila;
 
