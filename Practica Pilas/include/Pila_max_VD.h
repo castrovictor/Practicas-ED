@@ -21,7 +21,7 @@ public:
 
   bool empty() const;
 
-  void push(elemento insertado);
+  void push(int insertado);
 
   void pop();
 
@@ -31,4 +31,6 @@ public:
   
   
 
-}
+};
+
+#endif
