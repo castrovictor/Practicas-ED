@@ -1,6 +1,8 @@
 #ifndef __PILA_MAX_VD__
 #define __PILA_MAX_VD__
 
+#include "vectordin.h"
+
 struct elemento {
   int dato;
   int max;
@@ -14,9 +16,9 @@ public:
   PilaMax() {};
 
   PilaMax(const PilaMax & copia): pila(copia.pila) {};
-   
+
   PilaMax& operator=(const PilaMax& otra);
-  
+
   int getUsed() const;
 
   bool empty() const;
@@ -26,10 +28,10 @@ public:
   void pop();
 
   elemento& top();
-  
+
   const elemento& top() const;
-  
-  
+
+
 
 };
 

@@ -15,6 +15,7 @@ void VectorDin<T>::destruir() {
   reservados = 0;
   utilizados = 0;
   delete [] vect;
+  vect = 0;
  }
 
  template <class T>
@@ -108,9 +109,11 @@ template <class T>
    template <class T>
     void VectorDin<T>::deleteItem(int pos) {
       if(posvalida(pos)) {
-      for(int i = pos; i < utilizados - 1; i++)
-        vect[i] = vect[i+1];
-      utilizados--;
+        if(pos == 0 && (utilizados == 1))
+          destruir();
+        for(int i = pos; i < utilizados - 1; i++)
+          vect[i] = vect[i+1];
+        utilizados--;
       }
     }
 

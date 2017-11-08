@@ -8,28 +8,29 @@ struct elemento {
   int max;
 };
 
-class PilaMax(){
+class PilaMax {
 private:
   Cola<elemento> pila;
-  
+
  public:
   PilaMax(){};
 
   PilaMax(const PilaMax & copia): pila(copia.pila) {};
-   
+
   PilaMax& operator=(const PilaMax& otra);
-  
+
   int getUsed() const;
 
   bool empty() const;
 
-  void push(elemento insertado);
+  void push(int elem);
 
   void pop();
 
   elemento& top();
-  
+
   const elemento& top() const;
-  
- }
-  
+
+};
+
+#endif

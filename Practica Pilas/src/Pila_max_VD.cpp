@@ -11,9 +11,9 @@ int PilaMax::getUsed() const {
   return pila.getUtilizados();
 }
 
-PilaMax& operator=(const PilaMax& otra) {
-  pila = otra.pila();
-}  
+PilaMax& PilaMax::operator=(const PilaMax& otra) {
+  pila = otra.pila;
+}
 
 void PilaMax::push(int elem) {
   elemento aux;
