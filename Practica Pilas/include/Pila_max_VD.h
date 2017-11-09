@@ -3,6 +3,7 @@
 
 #include "vectordin.h"
 
+
 struct elemento {
   int dato;
   int max;
