@@ -4,7 +4,7 @@
   *
   */
 #include <cassert>
- #include <cola.h>  //El codigo ya se incluye en cola.h
+// #include <cola.h>  //El codigo ya se incluye en cola.h
 
 /* _________________________________________________________________________ */
 
