@@ -17,59 +17,41 @@ PilaMax& PilaMax::operator=(const PilaMax& otra){
    return pila.vacia();
  }
 
-
  void PilaMax::push(int elem) {
-   /*
    elemento aux;
    aux.dato = elem;
 
    if(empty()) {
      aux.max = elem;
+     pila.poner(aux);
    } else {
-     if(top().max > elem) {
+    if(pila.frente().max > elem) {
+      elem = pila.frente().max;
+    }
+    aux.max = elem;
 
-       elem = top().max;
-     }
-     aux.max = elem;
-    cout << "El tope es " << top().max << endl;
-  }*/
-  elemento aux;
-  aux.dato = 50;
-  aux.max = 30;
-  pila.poner(aux);
-
+    Cola<elemento> aux1;
+    aux1.poner(aux);
+    for(int i=0; i < getUsed(); i++){
+       aux1.poner(pila.frente());
+       pila.quitar();
+    }
+      pila = aux1;
+  }
  }
 
 
 
  void PilaMax::pop() {
-  Cola<elemento> aux;
-  int n = getUsed();
-  for(int i = 1; i < n; i++)
-    aux.poner(pila.frente());
-  pila = aux;
+   pila.quitar();
  }
 
 
  elemento& PilaMax::top() {
-   Cola<elemento> aux;
-   aux = pila;
-
-   int n = getUsed();
-   for(int i = 1; i < n; i++)
-     aux.quitar();
-
-   return aux.frente();
+   return pila.frente();
  }
 
 
  const elemento& PilaMax::top() const {
-   Cola<elemento> aux;
-   aux = pila;
-
-   int n = getUsed();
-   for(int i = 1; i < n; i++)
-     aux.quitar();
-   return aux.frente();
-
+   pila.frente();
  }
