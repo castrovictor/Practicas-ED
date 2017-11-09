@@ -32,15 +32,14 @@ PilaMax& PilaMax::operator=(const PilaMax& otra){
 
     Cola<elemento> aux1;
     aux1.poner(aux);
-    for(int i=0; i < getUsed(); i++){
+    int n = getUsed();
+    for(int i=0; i < n; i++){
        aux1.poner(pila.frente());
        pila.quitar();
     }
       pila = aux1;
   }
  }
-
-
 
  void PilaMax::pop() {
    pila.quitar();
@@ -53,5 +52,5 @@ PilaMax& PilaMax::operator=(const PilaMax& otra){
 
 
  const elemento& PilaMax::top() const {
-   pila.frente();
+   return pila.frente();
  }
