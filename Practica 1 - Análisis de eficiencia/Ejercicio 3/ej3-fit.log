@@ -1,0 +1,49 @@
+
+
+*******************************************************************************
+Tue Sep 26 19:35:31 2017
+
+
+FIT:    data read from "tiempos_binario_medio.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*log(x)+b
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Tue Sep 26 19:35:38 2017
+
+
+FIT:    data read from "tiempos_binario_medio.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*log(x)+b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 6.4055632459e+03   0.00e+00  6.64e+00    1.000000e+00   1.000000e+00
+   6 9.5925585707e-17  -3.13e-06  6.64e-06    6.403185e-09  -2.576553e-09
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 9.59256e-17
+rel. change during last iteration : -3.13065e-11
+
+degrees of freedom    (FIT_NDF)                        : 58
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.28604e-09
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.65389e-18
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 6.40319e-09      +/- 1.573e-10    (2.457%)
+b               = -2.57655e-09     +/- 1.469e-09    (57.01%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.994  1.000 
