@@ -7,12 +7,12 @@ CPPFLAGS = #-Wall -g
 CXXFLAGS = -c -I./$(INC)
 .PHONY: all clean mrproper
 
+error: 
+	@echo "Argumentos nos validos. Lea el documento de INSTRUCCIONES proporcionado. "
 
+pilacola: $(BIN)/pruebacola 
 
-
-pilacola: $(BIN)/pruebacola documentacion
-
-pilaVD: $(BIN)/pruebapilaVD documentacion
+pilaVD: $(BIN)/pruebapilaVD 
 
 
 $(BIN)/pruebacola :  $(OBJ)/Pila_max_Cola.o $(OBJ)/mainpilamax.o

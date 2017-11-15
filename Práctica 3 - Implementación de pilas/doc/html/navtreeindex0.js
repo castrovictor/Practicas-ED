@@ -1,6 +1,7 @@
 var NAVTREEINDEX0 =
 {
 "Pila__max_8h_source.html":[1,0,0,2],
+"Pila__max__Cola_8h.html":[1,0,0,3],
 "Pila__max__Cola_8h_source.html":[1,0,0,3],
 "Pila__max__VD_8h.html":[1,0,0,4],
 "Pila__max__VD_8h_source.html":[1,0,0,4],
@@ -28,7 +29,7 @@ var NAVTREEINDEX0 =
 "classPilaMax.html#a6ae2467f3e4d12e30901a50d8e712a13":[0,0,2,9],
 "classPilaMax.html#a6e5226f0653735e4b9d3225e7fb334c4":[0,0,2,0],
 "classPilaMax.html#a6e5226f0653735e4b9d3225e7fb334c4":[0,0,2,2],
-"classPilaMax.html#a7a9b5b00862abca2d89e40a645a67583":[0,0,2,15],
+"classPilaMax.html#a7a9b5b00862abca2d89e40a645a67583":[0,0,2,16],
 "classPilaMax.html#a7a9b5b00862abca2d89e40a645a67583":[0,0,2,17],
 "classPilaMax.html#a9d17e26b9693c23959ab09537e54e410":[0,0,2,1],
 "classPilaMax.html#a9d17e26b9693c23959ab09537e54e410":[0,0,2,3],
@@ -38,7 +39,7 @@ var NAVTREEINDEX0 =
 "classPilaMax.html#ac728a5593dbd9acb5d400f416e680736":[0,0,2,11],
 "classPilaMax.html#ada1b04455b248db3697f76f4f43c9d88":[0,0,2,12],
 "classPilaMax.html#ae443803dde20b9ff40770d8583ba0721":[0,0,2,14],
-"classPilaMax.html#ae443803dde20b9ff40770d8583ba0721":[0,0,2,16],
+"classPilaMax.html#ae443803dde20b9ff40770d8583ba0721":[0,0,2,15],
 "classPilaMax.html#af4497664bf9c16b73b844e67dd9c22f3":[0,0,2,13],
 "classVectorDin.html":[0,0,3],
 "classVectorDin.html#a0004dc4a95990a481372bdd16d8ac107":[0,0,3,4],

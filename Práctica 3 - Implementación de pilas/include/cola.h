@@ -2,7 +2,7 @@
   * @file cola.h
   * @brief Fichero cabecera del TDA Cola
   *
-  * Gestiona una secuencia de elementos con facilidades para la inserción y
+  * Gestiona una secuencia de elementos con facilidades para la inserciï¿½n y
   * borrado de elementos en un extremo
   */
 
@@ -16,22 +16,22 @@
  *
  *
  * Una instancia @e c del tipo de dato abstracto Cola sobre un dominio @e T es
- * una sucesión finita de elementos del mismo con un funcionamiento @e FIFO
- * (First In, First Out}). En una cola, las operaciones de inserción tienen
+ * una sucesiï¿½n finita de elementos del mismo con un funcionamiento @e FIFO
+ * (First In, First Out}). En una cola, las operaciones de inserciï¿½n tienen
  * lugar en uno de los extremos, denominado @e final de la cola, mientras que
- * el borrado y consulta se lleva a cabo en el otro extremo, denominado 
+ * el borrado y consulta se lleva a cabo en el otro extremo, denominado
  * @e frente de la cola. Una cola de longitud @e n la denotamos
 
  * - <a1,a2,a3,..,an<
 
- * En esta cola, tendremos acceso únicamente al elemento del @e Frente,
- * es decir, a @e a1. El borrado o consulta de un elemento será sobre @e a1,
- * mientras que la inserción de un nuevo elemento se hará después de
+ * En esta cola, tendremos acceso ï¿½nicamente al elemento del @e Frente,
+ * es decir, a @e a1. El borrado o consulta de un elemento serï¿½ sobre @e a1,
+ * mientras que la inserciï¿½n de un nuevo elemento se harï¿½ despuï¿½s de
  * @e an (final de la cola).
  *
- * Si n=0 diremos que la cola está vacía.
+ * Si n=0 diremos que la cola estï¿½ vacï¿½a.
  *
- * El espacio requerido para el almacenamiento es O(n), donde n es el número 
+ * El espacio requerido para el almacenamiento es O(n), donde n es el nï¿½mero
  * de elementos de la cola.
  *
  * @author J. Fdez-Valdivia
@@ -39,10 +39,13 @@
 */
 template <class T>
 class Cola{
-	
+
   private:
-    struct Celda {       
-      T elemento;        ///< Elemento de información.
+		/**
+		  * @brief Struct Celda
+			*/
+    struct Celda {
+      T elemento;        ///< Elemento de informaciï¿½n.
       Celda * siguiente; ///< Puntero al siguiente nodo.
 
       /**
@@ -51,8 +54,8 @@ class Cola{
       Celda() : siguiente(0){
       }
       /**
-       * @brief Constructor con parámetros
-       * @param elem Elemento de información.
+       * @brief Constructor con parï¿½metros
+       * @param elem Elemento de informaciï¿½n.
        * @param sig Puntero al siguiente nodo.
        */
       Celda(const T & elem, Celda * sig): elemento(elem), siguiente(sig){
@@ -60,9 +63,9 @@ class Cola{
     };
 
     Celda * primera; ///< Puntero al primer nodo de la lista.
-    Celda * ultima;  ///< Puntero al último nodo de la lista.
-    int num_elem;    ///< Número de elementos de la cola.
-    
+    Celda * ultima;  ///< Puntero al ï¿½ltimo nodo de la lista.
+    int num_elem;    ///< Nï¿½mero de elementos de la cola.
+
   public:
     // ---------------  Constructores ----------------
     /**
@@ -72,7 +75,7 @@ class Cola{
     }
     /**
      * @brief Constructor de copias
-     * @param original La cola de la que se hará la copia.
+     * @param original La cola de la que se harï¿½ la copia.
      */
     Cola(const Cola<T> & original);
     // ------------------ Destructor ------------------
@@ -82,12 +85,12 @@ class Cola{
     ~Cola();
     // --------------- Otras funciones ---------------
     /**
-     * @brief Operador de asignación
+     * @brief Operador de asignaciï¿½n
      * @param otra La cola que se va a asignar.
      */
     Cola& operator= (const Cola<T> & otra);
     /**
-     * @brief Comprueba si la cola está vacía
+     * @brief Comprueba si la cola estï¿½ vacï¿½a
      */
     bool vacia() const{
       return num_elem==0;
@@ -96,19 +99,19 @@ class Cola{
      * @brief Devuelve el elemento del frente de la cola
      */
     T& frente (){
-      assert(primera!=0);        //Si la cola está vacía, abortar
+      assert(primera!=0);        //Si la cola estï¿½ vacï¿½a, abortar
       return primera->elemento;  //Devuelve el elemento del frente de la cola
     }
     /**
      * @brief Devuelve el elemento del frente de una cola constante
      */
     const T & frente () const{
-      assert(primera!=0);        //Si la cola está vacía, abortar
+      assert(primera!=0);        //Si la cola estï¿½ vacï¿½a, abortar
       return primera->elemento;  //Devuelve el elemento del frente de la cola
     }
     /**
-     * @brief Añade un elemento al final de la cola
-     * @param elem Elemento que se va a añadir.
+     * @brief Aï¿½ade un elemento al final de la cola
+     * @param elem Elemento que se va a aï¿½adir.
      */
     void poner(const T & elem);
     /**
@@ -116,10 +119,10 @@ class Cola{
      */
     void quitar();
     /**
-     * @brief Devuelve el número de elementos de la cola
+     * @brief Devuelve el nï¿½mero de elementos de la cola
      */
-    int num_elementos() const{ 
-      return num_elem; 
+    int num_elementos() const{
+      return num_elem;
     }
 };
 

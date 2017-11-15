@@ -8,10 +8,13 @@
 
 #include "vectordin.h"
 
+/**
+  *  @brief Struct con dos int - uno del dato y otro del máximo
+  */
 
 struct elemento {
-  int dato;
-  int max;
+  int dato; /**< El número que metemos*/
+  int max; /**< El máximo ese momento*/
 };
 
 /**

@@ -15,8 +15,8 @@ var classPilaMax =
     [ "push", "classPilaMax.html#ada1b04455b248db3697f76f4f43c9d88", null ],
     [ "push", "classPilaMax.html#af4497664bf9c16b73b844e67dd9c22f3", null ],
     [ "top", "classPilaMax.html#ae443803dde20b9ff40770d8583ba0721", null ],
-    [ "top", "classPilaMax.html#a7a9b5b00862abca2d89e40a645a67583", null ],
     [ "top", "classPilaMax.html#ae443803dde20b9ff40770d8583ba0721", null ],
+    [ "top", "classPilaMax.html#a7a9b5b00862abca2d89e40a645a67583", null ],
     [ "top", "classPilaMax.html#a7a9b5b00862abca2d89e40a645a67583", null ],
     [ "pila", "classPilaMax.html#a3d2aa09f067e4b556a2d88f7c3ed97a8", null ],
     [ "pila", "classPilaMax.html#a3426e10f50d8bb458a016f3ead2d4775", null ]

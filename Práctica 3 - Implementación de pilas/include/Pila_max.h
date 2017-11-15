@@ -1,4 +1,4 @@
-#define CUAL_COMPILA 1
+#define CUAL_COMPILA 2
 #if CUAL_COMPILA==1
 #include <Pila_max_VD.h>
 #else

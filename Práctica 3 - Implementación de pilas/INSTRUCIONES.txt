@@ -1,3 +1,5 @@
 Para compilar la pila implementada con vector dinámico, debemos editar el archivo /include/Pila_max.h, sustituir la primera línea por #define CUAL_COMPILA 1 y compilar con la orden $make pilaVD
 
 Para compilar la pila implementada con la cola, debemos editar el archivo /include/Pila_max.h, sustituir la primera línea del fichero por #define CUAL_COMPILA 2 y compilar con la orden $make pilacola
+
+Si se desea generar el doxyfile, usar orden $make documentacion
