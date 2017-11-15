@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Pila_max_Cola.h"
+#include "Pila_max.h"
 using namespace std;
 
 int main() {

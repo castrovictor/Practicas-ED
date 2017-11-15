@@ -5,15 +5,21 @@ BIN = bin
 CXX = g++
 CPPFLAGS = #-Wall -g
 CXXFLAGS = -c -I./$(INC)
-
 .PHONY: all clean mrproper
 
 
-# all: $(BIN)/pruebamax documentacion
 
 
-$(BIN)/pruebamax :  $(OBJ)/Pila_max_Cola.o $(OBJ)/mainpilamax.o
-	$(CXX) -o $(BIN)/pruebamax $(OBJ)/Pila_max_Cola.o $(OBJ)/Pila_max_VD.o $(OBJ)/mainpilamax.o
+pilacola: $(BIN)/pruebacola documentacion
+
+pilaVD: $(BIN)/pruebapilaVD documentacion
+
+
+$(BIN)/pruebacola :  $(OBJ)/Pila_max_Cola.o $(OBJ)/mainpilamax.o
+	$(CXX) -o $(BIN)/pruebacola $(OBJ)/Pila_max_Cola.o $(OBJ)/mainpilamax.o
+
+$(BIN)/pruebapilaVD :  $(OBJ)/Pila_max_VD.o $(OBJ)/mainpilamax.o
+	$(CXX) -o $(BIN)/pruebapilaVD $(OBJ)/Pila_max_VD.o  $(OBJ)/mainpilamax.o
 
 $(OBJ)/%.o: $(SRC)/%.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $<

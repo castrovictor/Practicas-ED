@@ -17,7 +17,7 @@ struct elemento {
 /**
   *  @brief T.D.A. Pila a partir de vector dinámico
   *
-  * Una instancia @e p del tipo de datos abstracto @p PilaMax es un objeto
+  * Una instancia @e p del tipo de datos abstracto PilaMax es un objeto
   * con 1 campo, un vector dinámico del dato estrcuturado elemento
   *
   * @author  Víctor Castro Serrano
@@ -28,7 +28,7 @@ struct elemento {
 
 class PilaMax {
 private:
-  VectorDin<elemento> pila;
+  VectorDin<elemento> pila;  /**< Vector dinamico de dato estructurado elemento */
 
 public:
 
@@ -41,7 +41,7 @@ public:
 
   /**
   * @brief Constructor copia de la clase
-  *@param p objeto PilaMax del que se copia la información
+  *@param copia objeto PilaMax del que se copia la información
   */
 
   PilaMax(const PilaMax & copia): pila(copia.pila) {};
@@ -81,14 +81,14 @@ public:
 
   /**
    * @brief Devuelve el último elemento insertado en la pila, no lo elimina.
-   * @param elem elemento que se encuentra en el tope de la pila
+   * @return elemento que se encuentra en el tope de la pila
    */
 
   elemento& top();
 
   /**
-   * @brief Devuelvolución por referencia constante del último elemento insertado en la pila, no lo elimina.
-   * @param elem elemento que se encuentra en el tope de la pila
+   * @brief Devolución por referencia constante del último elemento insertado en la pila, no lo elimina.
+   * @return elemento que se encuentra en el tope de la pila
    */
   const elemento& top() const;
 };

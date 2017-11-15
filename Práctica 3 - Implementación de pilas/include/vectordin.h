@@ -18,8 +18,7 @@ using namespace std;
   * el número de objetos utiles en el vector y otro con el numero de posiciones
   * reservadas
 
-  * Un ejemplo de su uso:
-  * @include pruebacronologia.cpp
+  
   *
   * @author  Maxi Suárez van Gelderen
   * @author Victor Castro Serrano
@@ -82,7 +81,7 @@ class VectorDin{
 
 
     /**
-      *@brief Retrasa los elementos a partir de la posición dada. La componenete @pos se queda igual
+      *@brief Retrasa los elementos a partir de la posición dada. La componenete pos se queda igual
       *@param pos Posición que queremos dejar libre, retrasando todos los elementos a partir de ella incluída.
       */
     void push_back(int pos);

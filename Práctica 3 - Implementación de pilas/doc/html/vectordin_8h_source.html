@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>PilaMax: Fichero Fuente include/vectordin.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">PilaMax
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.11 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('vectordin_8h_source.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">vectordin.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef _VECTORDIN_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define _VECTORDIN_</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classVectorDin.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classVectorDin.html">VectorDin</a>{</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">private</span>:</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classVectorDin.html#a1b2c5fd6b3d79770e5fd737dbbdcbfd1">   33</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classVectorDin.html#a1b2c5fd6b3d79770e5fd737dbbdcbfd1">utilizados</a>;                      </div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classVectorDin.html#a275af1f352594bd5b85cc9345c02f868">   34</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classVectorDin.html#a275af1f352594bd5b85cc9345c02f868">reservados</a>;                      </div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classVectorDin.html#afd3d6b2bca2e14fa3c1eface22018b22">   35</a></span>&#160;    T *<a class="code" href="classVectorDin.html#afd3d6b2bca2e14fa3c1eface22018b22">vect</a>;                             </div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> resize(<span class="keywordtype">int</span> n);                  </div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> espacio_libre() <span class="keyword">const</span>;          </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span> posvalida(<span class="keywordtype">int</span> pos) <span class="keyword">const</span>;       </div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">public</span>:</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classVectorDin.html">VectorDin</a>();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    ~<a class="code" href="classVectorDin.html">VectorDin</a>();</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> destruir();</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> addItem(T&amp; nuevo);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> deleteItem(<span class="keywordtype">int</span> pos);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    T&amp; operator[](<span class="keywordtype">int</span> i);</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> T&amp; operator[](<span class="keywordtype">int</span> i) <span class="keyword">const</span>;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> push_back(<span class="keywordtype">int</span> pos);</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="classVectorDin.html">VectorDin</a>(<span class="keyword">const</span> <a class="code" href="classVectorDin.html">VectorDin</a>&amp; v);</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">int</span> getUtilizados() <span class="keyword">const</span>;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">int</span> getReservados() <span class="keyword">const</span>;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    T getItem(<span class="keywordtype">int</span> pos) <span class="keyword">const</span>;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> setItem(<span class="keywordtype">int</span> pos, T&amp; item);</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">bool</span> existItem(<span class="keyword">const</span> T&amp; item) <span class="keyword">const</span>;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="classVectorDin.html">VectorDin&lt;T&gt;</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classVectorDin.html">VectorDin&lt;T&gt;</a>&amp; nuevo);</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;};</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#include &quot;vectordin.cpp&quot;</span></div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<div class="ttc" id="classVectorDin_html"><div class="ttname"><a href="classVectorDin.html">VectorDin</a></div><div class="ttdoc">T.D.A. VectorDinamico. </div><div class="ttdef"><b>Definition:</b> <a href="vectordin_8h_source.html#l00031">vectordin.h:31</a></div></div>
+<div class="ttc" id="classVectorDin_html_afd3d6b2bca2e14fa3c1eface22018b22"><div class="ttname"><a href="classVectorDin.html#afd3d6b2bca2e14fa3c1eface22018b22">VectorDin::vect</a></div><div class="ttdeci">T * vect</div><div class="ttdef"><b>Definition:</b> <a href="vectordin_8h_source.html#l00035">vectordin.h:35</a></div></div>
+<div class="ttc" id="classVectorDin_html_a1b2c5fd6b3d79770e5fd737dbbdcbfd1"><div class="ttname"><a href="classVectorDin.html#a1b2c5fd6b3d79770e5fd737dbbdcbfd1">VectorDin::utilizados</a></div><div class="ttdeci">int utilizados</div><div class="ttdef"><b>Definition:</b> <a href="vectordin_8h_source.html#l00033">vectordin.h:33</a></div></div>
+<div class="ttc" id="classVectorDin_html_a275af1f352594bd5b85cc9345c02f868"><div class="ttname"><a href="classVectorDin.html#a275af1f352594bd5b85cc9345c02f868">VectorDin::reservados</a></div><div class="ttdeci">int reservados</div><div class="ttdef"><b>Definition:</b> <a href="vectordin_8h_source.html#l00034">vectordin.h:34</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<hr>
+<small>ETS Ingeniería Informática y Telecomunicaciones. Universidad de Granada.
+</small>
