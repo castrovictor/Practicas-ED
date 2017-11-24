@@ -14,9 +14,6 @@ private:
   int year;
 
 public:
-  typedef typename set<string>::iterator iterator;
-  typedef typename set<string>::const_iterator const_iterator;
-
   FechaHistorica(): year(0) {}
 
   FechaHistorica(const FechaHistorica& f);
@@ -46,6 +43,8 @@ public:
     * @param nuevo string con evento a añadir
     */
   void addEvento(string nuevo);
+
+    void addEventos(const FechaHistorica& h);
 
   /**
     * @brief Consulta si existe un evento

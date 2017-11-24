@@ -1,7 +1,7 @@
-#include "fecha_historica.h"
+#include "FechaHistorica.h"
 
-typedef typename set<string>::iterator iterator;
-typedef typename set<string>::const_iterator const_iterator;
+typedef set<string>::iterator iterador;
+typedef set<string>::const_iterator const_iterator;
 
 const char SEP = '#';
 
@@ -27,15 +27,18 @@ FechaHistorica::FechaHistorica(const FechaHistorica& f) {
     eventos.insert(nuevo);
   }
 
+  void FechaHistorica::addEventos(const FechaHistorica& h){
+    for(iterador i = h.eventos.begin(); i != h.eventos.end(); ++i)
+      eventos.insert(*i);
+  }
+
   bool FechaHistorica::existEvento(string s) const {
     return eventos.count(s);
   }
 
   bool FechaHistorica::buscarEventos(string s, FechaHistorica &matches){
     bool encontrado = false;
-    const_iterator inicio = eventos.begin();
-    const_iterator fin = eventos.end();
-    for (const_iterator p = inicio; p != fin; ++p) {
+    for (iterador p = eventos.begin(); p != eventos.end(); ++p) {
        if(p->find(s) != -1 ) {
           matches.addEvento(*p);
           encontrado = true;
@@ -50,10 +53,9 @@ FechaHistorica::FechaHistorica(const FechaHistorica& f) {
 
 ostream& operator<< (ostream& os, const FechaHistorica& e) {
     os << e.getYear();
-    const_iterator inicio = e.eventos.begin();
-    const_iterator fin = e.eventos.end();
-    for(const_iterator p = inicio; p != fin; ++p)
+    for(const_iterator p = e.eventos.begin(); p != e.eventos.end(); ++p)
       os << SEP << *p;
+
     return os;
 }
 
@@ -67,6 +69,8 @@ istream& operator>> (istream& is, FechaHistorica& e)  {
   }
   return is;
 }
+
+
 
 
 FechaHistorica& FechaHistorica::operator=(const FechaHistorica& nuevo) {
