@@ -1,9 +1,19 @@
 #include "FechaHistorica.h"
+#include <sstream>
+#include <string>
+#include <sstream>
 
 typedef set<string>::iterator iterador;
 typedef set<string>::const_iterator const_iterator;
 
 const char SEP = '#';
+
+string NumberToString ( int Number )
+{
+	stringstream ss;
+	ss << Number;
+	return ss.str();
+}
 
 FechaHistorica::FechaHistorica(const FechaHistorica& f) {
   year = f.year;
@@ -52,10 +62,16 @@ FechaHistorica::FechaHistorica(const FechaHistorica& f) {
 
 
 ostream& operator<< (ostream& os, const FechaHistorica& e) {
-    os << e.getYear();
-    for(const_iterator p = e.eventos.begin(); p != e.eventos.end(); ++p)
-      os << SEP << *p;
-
+    //os << e.getYear();
+    string year = NumberToString(e.getYear());
+    string aux;
+    aux = year;   
+    cout << aux << endl;
+   	
+    for(const_iterator p = e.eventos.begin(); p != e.eventos.end(); ++p){
+    	aux = aux + SEP + *p;
+    	cout << aux << endl;
+   	}
     return os;
 }
 
