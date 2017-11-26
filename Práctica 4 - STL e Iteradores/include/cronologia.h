@@ -52,6 +52,12 @@ Cronologia(const Cronologia& c);
     */
   int getNumeroFechas() const;
 
+  int getNumeroEventos() const;
+
+  int getMaximoEventos() const;
+
+
+
   /**
     *@brief Devuelve la FechaHistorica que contiene nuestro
     *vector cronologico en la posicion i

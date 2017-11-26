@@ -50,6 +50,23 @@ int Cronologia::getNumeroFechas() const {
   return cron.size();
 }
 
+int Cronologia::getNumeroEventos() const {
+  int n = 0;
+  for(const_iterator p = cron.begin(); p != cron.end(); ++p)
+    n += p->second.getUtilizados();
+
+  return n;
+}
+
+int Cronologia::getMaximoEventos() const {
+  int max = 0;
+  for(const_iterator p = cron.begin(); p != cron.end(); ++p)
+    if(p->second.getUtilizados() >= max)
+      max = p->second.getUtilizados();
+
+  return max;
+}
+
 void Cronologia::addFecha(FechaHistorica f) {
 	cron.insert(par(f.getYear(),f));
 }
