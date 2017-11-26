@@ -8,37 +8,24 @@ CXXFLAGS = -c -I./$(INC)
 
 .PHONY: all clean mrproper
 
-
-all: $(BIN)/prueba
-
-#$(OBJ)/FechaHistorica.o : $(INC)/FechaHistorica.h  $(INC)/vectordin.h $(SRC)/FechaHistorica.cpp
-#	$(CXX) $(CPPFLAGS) -I./$(INC) $(SRC)/FechaHistorica.cpp  -c -o $(OBJ)/FechaHistorica.o 
-#$(OBJ)/vectordin.o : $(INC)/vectordin.h $(SRC)/vectordin.cpp
-#	$(CXX) $(CPPFLAGS) -I./$(INC) -c -o $(OBJ)/vectordin.o $(SRC)/vectordin.cpp
+all: $(BIN)/filtradoPorClave $(BIN)/unionCronologia $(BIN)/recuento_eventos
 
 
-$(BIN)/prueba : $(OBJ)/pruebacronologia.o $(OBJ)/FechaHistorica.o $(OBJ)/cronologia.o
-	$(CXX) -o $(BIN)/prueba $(OBJ)/pruebacronologia.o $(OBJ)/FechaHistorica.o $(OBJ)/cronologia.o
+$(BIN)/recuento_eventos : $(OBJ)/recuento_eventos.o $(OBJ)/FechaHistorica.o $(OBJ)/cronologia.o
+		$(CXX) -o $@ $<
+$(BIN)/unionCronologia : $(OBJ)/unionCronologia.o $(OBJ)/FechaHistorica.o $(OBJ)/cronologia.o
+	$(CXX) -o $@ $<
+$(BIN)/filtradoPorClave : $(OBJ)/filtradoPorClave.o $(OBJ)/FechaHistorica.o $(OBJ)/cronologia.o
+	$(CXX) -o $@ $<
 
 $(OBJ)/%.o: $(SRC)/%.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $<
 
-$(OBJ)/pruebacronologia.o : $(INC)/FechaHistorica.h
+$(OBJ)/recuento_eventos.o : $(INC)/cronologia.h
+$(OBJ)/unionCronologia.o : $(INC)/cronologia.h
+$(OBJ)/filtradoPorClave.o : $(INC)/cronologia.h
 $(OBJ)/FechaHistorica.o : $(INC)/FechaHistorica.h
 $(OBJ)/cronologia.o : $(INC)/cronologia.h $(INC)/FechaHistorica.h
-
-
-
-clean:
-	@rm -fr $(OBJ)/*
-	@echo "Limpiando obj..."
-
-mrproper: clean
-	@rm -fr $(BIN)/*
-	@echo "Limpiando bin..."
-
-documentacion: 
-	doxygen doc/doxys/Doxyfile
 
 
 
