@@ -9,7 +9,7 @@ CXXFLAGS = -c -I./$(INC)
 .PHONY: all clean mrproper
 
 
-all: $(BIN)/recuento_eventos $(BIN)/filtrado_intervalo
+all: $(BIN)/recuento_eventos $(BIN)/filtrado_intervalo $(BIN)/filtradoPorClave $(BIN)/unionCronologia
 
 $(BIN)/recuento_eventos : $(OBJ)/recuento_eventos.o $(OBJ)/FechaHistorica.o $(OBJ)/cronologia.o
 	$(CXX) -o $(BIN)/recuento_eventos $(OBJ)/recuento_eventos.o $(OBJ)/FechaHistorica.o $(OBJ)/cronologia.o
