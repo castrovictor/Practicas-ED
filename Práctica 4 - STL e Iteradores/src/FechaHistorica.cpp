@@ -62,16 +62,11 @@ FechaHistorica::FechaHistorica(const FechaHistorica& f) {
 
 
 ostream& operator<< (ostream& os, const FechaHistorica& e) {
-    //os << e.getYear();
-    string year = NumberToString(e.getYear());
-    string aux;
-    aux = year;   
-    cout << aux << endl;
-   	
-    for(const_iterator p = e.eventos.begin(); p != e.eventos.end(); ++p){
-    	aux = aux + SEP + *p;
-    	cout << aux << endl;
-   	}
+    os << e.getYear();
+   
+    for(const_iterator p = e.eventos.begin(); p != e.eventos.end(); ++p)
+    	os << SEP << *p;
+
     return os;
 }
 
