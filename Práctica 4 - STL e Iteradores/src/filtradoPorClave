@@ -28,8 +28,8 @@ int main(int argc, char * argv[]){
 
    f >> cron;
 
-  if(arg >= 3)
-    string = argv[2];
+  if(argc >= 3)
+    clave = argv[2];
   else {
     cout << "Introduce una clave: ";
     cin >> clave;
@@ -37,12 +37,12 @@ int main(int argc, char * argv[]){
 
   cron.BuscarEventos(clave,busqueda);
 
-  if(arg == 4){
-    ofstream salida (arg[3]);
+  if(argc == 4){
+    ofstream salida (argv[3]);
     salida << busqueda;
   }
 
   else
     cout << busqueda;
 
-} 
+}
