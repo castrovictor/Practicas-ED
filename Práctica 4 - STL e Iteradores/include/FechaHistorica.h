@@ -8,6 +8,11 @@
 #include <stdlib.h>
 using namespace std;
 
+
+typedef set<string>::iterator iterador;
+typedef set<string>::const_iterator const_iterator;
+
+
 class FechaHistorica {
 private:
   set<string> eventos;
@@ -39,6 +44,15 @@ public:
   * @brief Método de acceso al año de la FechaHistorica
   * @return int con el valor del campo year
   */
+  
+  iterador begin();
+  
+  const_iterator end();
+  
+  iterador end();
+  
+  const_iterator end() const;
+  
   int getYear() const;
 
   /**
