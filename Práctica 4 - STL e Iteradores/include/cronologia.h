@@ -14,8 +14,11 @@
 
 using namespace std;
 
-typedef set<string>::iterator iterador;
-typedef set<string>::const_iterator const_iterator;
+typedef pair<int,FechaHistorica> par;
+typedef map<int, FechaHistorica>::iterator it;
+typedef map<int, FechaHistorica>::const_iterator const_iterator;
+typedef set<string>::const_iterator const_iterator_set;
+
 
 /**
   *  @brief T.D.A. Cronologia
@@ -48,11 +51,11 @@ public:
 
   Cronologia(const Cronologia& c);
  
-  iterador begin();
+  it begin();
  
   const_iterator begin() const;
  
-  iterador end();
+  it end();
  
   const_iterator end() const ;
 
