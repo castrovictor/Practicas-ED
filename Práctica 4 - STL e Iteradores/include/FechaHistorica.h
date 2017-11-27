@@ -14,9 +14,24 @@ private:
   int year;
 
 public:
+  
+   /**
+  * @brief Constructor vacío, inicia el año en 0 y el set vacío.
+  */
   FechaHistorica(): year(0) {}
+  
+  /**
+  * @brief Constructor copia, inicia la nueva fecha con los mismo datos que la del argumento
+  * @param f FechaHistorica con los datos a copiar
+  */
 
   FechaHistorica(const FechaHistorica& f);
+  
+    /**
+  * @brief Constructor copia, inicia la nueva fecha con los mismo datos que la del argumento
+  * @param y int del año en el que ocurrieron los eventos
+  * @param v set<string> con los eventos históricos
+  */
 
   FechaHistorica(int y, set<string> v): eventos(v), year(y) {};
 
@@ -43,8 +58,13 @@ public:
     * @param nuevo string con evento a añadir
     */
   void addEvento(string nuevo);
+  
+  /**
+    * @brief Añade los eventos de la fecha del argumento
+    * @param h FechaHitorica con los nuevos eventos
+    */
 
-    void addEventos(const FechaHistorica& h);
+  void addEventos(const FechaHistorica& h);
 
   /**
     * @brief Consulta si existe un evento
