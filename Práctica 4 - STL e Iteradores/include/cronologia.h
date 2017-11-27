@@ -12,8 +12,10 @@
 #include "FechaHistorica.h"
 #include <map>
 
-
 using namespace std;
+
+typedef set<string>::iterator iterador;
+typedef set<string>::const_iterator const_iterator;
 
 /**
   *  @brief T.D.A. Cronologia
@@ -44,7 +46,15 @@ public:
     *@param c objeto cronología del que se copia la información
     */
 
-Cronologia(const Cronologia& c);
+  Cronologia(const Cronologia& c);
+ 
+  iterador begin();
+ 
+  const_iterator begin() const;
+ 
+  iterador end();
+ 
+  const_iterator end() const ;
 
   /**
     * @brief Nos devuelve el número de FechasHistoricas que tiene nuestra cronología
