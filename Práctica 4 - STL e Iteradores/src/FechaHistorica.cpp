@@ -9,17 +9,15 @@ typedef set<string>::const_iterator const_iterator;
 
 const char SEP = '#';
 
-string NumberToString ( int Number )
-{
-	stringstream ss;
-	ss << Number;
-	return ss.str();
-}
-
 FechaHistorica::FechaHistorica(const FechaHistorica& f) {
   year = f.year;
   eventos = f.eventos;
-}
+ }
+
+iterador FechaHistorica::begin(){
+	return this->begin();
+	}
+
 
   int FechaHistorica::getYear() const{
     return year;
