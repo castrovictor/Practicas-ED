@@ -101,9 +101,9 @@ Cronologia Cronologia::EventsBetween(int y1, int y2) {
   if(y1 <= cron[n-1].getYear() &&  y2 >= cron[0].getYear()) {
     //Buscamos dónde empezamos, en la posición mayor o igual a y1
     int i = 0;
-    while(y1 < cron[i].getYear())
+    while(y1 > cron[i].getYear())
       i++;
-    for(int j = i; y2 <= cron[j].getYear() && j < n; j++)
+    for(int j = i; y2 >= cron[j].getYear() && j < n; j++)
       cr.addFecha(cron[j]);
     }
     return cr;
