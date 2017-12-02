@@ -124,7 +124,6 @@ Cronologia Cronologia::EventsBetween(int y1, int y2) {
 }
 
 bool Cronologia::BuscarEventos(string s, Cronologia &matches) {
-  int n = getNumeroFechas();
   for(it p = cron.begin(); p != cron.end(); ++p) {
     FechaHistorica f;
     bool existe = p->second.buscarEventos(s,f);
