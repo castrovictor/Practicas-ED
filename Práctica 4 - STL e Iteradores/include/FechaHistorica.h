@@ -15,23 +15,23 @@ typedef set<string>::const_iterator const_iterator;
 
 class FechaHistorica {
 private:
-  set<string> eventos;
-  int year;
+  set<string> eventos;      /**Set de strings con los eventos */
+  int year;                 /**Año en el que ocurrieron los eventos */
 
 public:
-  
+
    /**
   * @brief Constructor vacío, inicia el año en 0 y el set vacío.
   */
   FechaHistorica(): year(0) {}
-  
+
   /**
   * @brief Constructor copia, inicia la nueva fecha con los mismo datos que la del argumento
   * @param f FechaHistorica con los datos a copiar
   */
 
   FechaHistorica(const FechaHistorica& f);
-  
+
     /**
   * @brief Constructor copia, inicia la nueva fecha con los mismo datos que la del argumento
   * @param y int del año en el que ocurrieron los eventos
@@ -40,19 +40,19 @@ public:
 
   FechaHistorica(int y, set<string> v): eventos(v), year(y) {};
 
+  iterador begin();
+
+  const_iterator end();
+
+  iterador end();
+
+  const_iterator end() const;
+
   /**
   * @brief Método de acceso al año de la FechaHistorica
   * @return int con el valor del campo year
   */
-  
-  iterador begin();
-  
-  const_iterator end();
-  
-  iterador end();
-  
-  const_iterator end() const;
-  
+
   int getYear() const;
 
   /**
@@ -72,7 +72,7 @@ public:
     * @param nuevo string con evento a añadir
     */
   void addEvento(string nuevo);
-  
+
   /**
     * @brief Añade los eventos de la fecha del argumento
     * @param h FechaHitorica con los nuevos eventos
@@ -120,7 +120,6 @@ public:
     */
 
   FechaHistorica& operator=(const FechaHistorica& nuevo);
-
 
 };
 #endif

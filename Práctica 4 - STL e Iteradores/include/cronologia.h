@@ -34,7 +34,7 @@ typedef set<string>::const_iterator const_iterator_set;
 
 class Cronologia {
 private:
-  map<int,FechaHistorica> cron;
+  map<int,FechaHistorica> cron;     /**< map de las fechas históricas */
 
 public:
   /**
@@ -50,13 +50,13 @@ public:
     */
 
   Cronologia(const Cronologia& c);
- 
+
   it begin();
- 
+
   const_iterator begin() const;
- 
+
   it end();
- 
+
   const_iterator end() const ;
 
   /**
@@ -64,21 +64,21 @@ public:
     *@return Número de FechasHistoricas que tiene nuestra cronología
     */
   int getNumeroFechas() const;
- 
+
  /**
     * @brief Nos devuelve el número total de eventos históricos almacenados en la cronología
     * @return Número de eventos histricos que tiene la cronologa
     */
 
   int getNumeroEventos() const;
- 
+
   /**
     * @brief Nos devuelve el mayor número de eventos almacenados para un año
     * @return Mayor número de eventos almacenados para un año
     */
 
   int getMaximoEventos() const;
- 
+
   /**
     *@brief Devuelve la FechaHistorica que contiene nuestro
     *vector cronologico en la posicion i
@@ -89,7 +89,7 @@ public:
 
   /**
     *@brief Añade una FechaHistórica ordenadamente
-    *@param f FechaHistorica que se queire añadir
+    *@param f FechaHistorica que se quiere añadir
     */
   void addFecha(FechaHistorica f);
 
@@ -146,9 +146,9 @@ public:
     *@param c Cronología donde queremos cargar el Flujo
     */
   friend istream& operator>> (istream& is, Cronologia& c);
- 
+
  /**
-    *@brief Dadas dos cronologas, las une y las almacena en la tercera dada como argumento por referencia
+    *@brief Dadas dos cronologiaas, las une y las almacena en la tercera dada como argumento por referencia
     *@param c1 Primera cronología a unir
     *@param c2 Segunda cronología a unir
     *@param res Cronología que contendrá la unión de ambas, devuelta por referencia
