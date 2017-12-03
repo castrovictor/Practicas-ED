@@ -40,14 +40,6 @@ public:
 
   FechaHistorica(int y, set<string> v): eventos(v), year(y) {};
 
-  iterador begin();
-
-  const_iterator end();
-
-  iterador end();
-
-  const_iterator end() const;
-
   /**
   * @brief Método de acceso al año de la FechaHistorica
   * @return int con el valor del campo year

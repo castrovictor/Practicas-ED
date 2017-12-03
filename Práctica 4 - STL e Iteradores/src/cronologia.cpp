@@ -8,7 +8,7 @@ using namespace std;
 
 typedef pair<int,FechaHistorica> par;
 typedef map<int, FechaHistorica>::iterator it;
-typedef map<int, FechaHistorica>::const_iterator const_iterator;
+typedef map<int, FechaHistorica>::const_iterator const_iterador;
 typedef set<string>::const_iterator const_iterator_set;
 
 
@@ -24,7 +24,7 @@ void swap (int & a, int & b) {
 
 void UnirCronologias(const Cronologia& c1, const Cronologia& c2, Cronologia& res) {
   res = c1;
-  for(const_iterator p = c2.cron.begin(); p != c2.cron.end(); ++p) {
+  for(const_iterador p = c2.cron.begin(); p != c2.cron.end(); ++p) {
     int y = p->first;
     if(c1.cron.count(y)) {
       FechaHistorica faux;
@@ -52,7 +52,7 @@ int Cronologia::getNumeroFechas() const {
 
 int Cronologia::getNumeroEventos() const {
   int n = 0;
-  for(const_iterator p = cron.begin(); p != cron.end(); ++p)
+  for(const_iterador p = cron.begin(); p != cron.end(); ++p)
     n += p->second.getUtilizados();
 
   return n;
@@ -60,7 +60,7 @@ int Cronologia::getNumeroEventos() const {
 
 int Cronologia::getMaximoEventos() const {
   int max = 0;
-  for(const_iterator p = cron.begin(); p != cron.end(); ++p)
+  for(const_iterador p = cron.begin(); p != cron.end(); ++p)
     if(p->second.getUtilizados() >= max)
       max = p->second.getUtilizados();
 
@@ -142,7 +142,7 @@ Cronologia& Cronologia::operator=(const Cronologia& nuevo) {
 
   ostream& operator<< (ostream& os, const Cronologia& c) {
 
-    for(const_iterator p = c.cron.begin(); p != c.cron.end(); ++p) {
+    for(const_iterador p = c.cron.begin(); p != c.cron.end(); ++p) {
       os << p->second << endl;
     }
     return os;

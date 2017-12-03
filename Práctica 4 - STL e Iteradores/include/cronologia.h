@@ -16,7 +16,7 @@ using namespace std;
 
 typedef pair<int,FechaHistorica> par;
 typedef map<int, FechaHistorica>::iterator it;
-typedef map<int, FechaHistorica>::const_iterator const_iterator;
+typedef map<int, FechaHistorica>::const_iterator const_iterador;
 typedef set<string>::const_iterator const_iterator_set;
 
 
@@ -51,13 +51,6 @@ public:
 
   Cronologia(const Cronologia& c);
 
-  it begin();
-
-  const_iterator begin() const;
-
-  it end();
-
-  const_iterator end() const ;
 
   /**
     * @brief Nos devuelve el número de FechasHistoricas que tiene nuestra cronología

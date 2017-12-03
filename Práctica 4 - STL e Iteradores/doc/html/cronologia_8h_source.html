@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>CronologiaSTL: Fichero Fuente include/cronologia.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">CronologiaSTL
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.11 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('cronologia_8h_source.html','');});
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">cronologia.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef _CRONOLOGIA_</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define _CRONOLOGIA_</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;FechaHistorica.h&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">typedef</span> pair&lt;int,FechaHistorica&gt; par;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">typedef</span> map&lt;int, FechaHistorica&gt;::iterator it;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">typedef</span> map&lt;int, FechaHistorica&gt;::const_iterator const_iterador;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">typedef</span> set&lt;string&gt;::const_iterator const_iterator_set;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classCronologia.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCronologia.html">Cronologia</a> {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classCronologia.html#aa707f72e69465459ba0bde2f24e5acd0">   37</a></span>&#160;  map&lt;int,FechaHistorica&gt; <a class="code" href="classCronologia.html#aa707f72e69465459ba0bde2f24e5acd0">cron</a>;     </div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="classCronologia.html">Cronologia</a>();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="classCronologia.html">Cronologia</a>(<span class="keyword">const</span> <a class="code" href="classCronologia.html">Cronologia</a>&amp; c);</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">int</span> getNumeroFechas() <span class="keyword">const</span>;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">int</span> getNumeroEventos() <span class="keyword">const</span>;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">int</span> getMaximoEventos() <span class="keyword">const</span>;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="classFechaHistorica.html">FechaHistorica</a> getFecha(<span class="keywordtype">int</span> i) <span class="keyword">const</span>;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">void</span> addFecha(<a class="code" href="classFechaHistorica.html">FechaHistorica</a> f);</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">void</span> deleteFecha(<span class="keywordtype">int</span> y);</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">bool</span> existYear(<span class="keywordtype">int</span> f) <span class="keyword">const</span>;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <a class="code" href="classCronologia.html">Cronologia</a> EventsBetween(<span class="keywordtype">int</span> y1, <span class="keywordtype">int</span> y2);</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="keywordtype">bool</span> BuscarEventos(<span class="keywordtype">string</span> s, <a class="code" href="classCronologia.html">Cronologia</a> &amp;matches);</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="classCronologia.html">Cronologia</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classCronologia.html">Cronologia</a>&amp; nuevo);</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keyword">friend</span> ostream&amp; operator&lt;&lt; (ostream&amp; os, <span class="keyword">const</span> <a class="code" href="classCronologia.html">Cronologia</a>&amp; c);</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keyword">friend</span> istream&amp; operator&gt;&gt; (istream&amp; is, <a class="code" href="classCronologia.html">Cronologia</a>&amp; c);</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keyword">friend</span> <span class="keywordtype">void</span> UnirCronologias(<span class="keyword">const</span> <a class="code" href="classCronologia.html">Cronologia</a>&amp; c1, <span class="keyword">const</span> <a class="code" href="classCronologia.html">Cronologia</a>&amp; c2, <a class="code" href="classCronologia.html">Cronologia</a>&amp; res);</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;};</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<div class="ttc" id="classCronologia_html_aa707f72e69465459ba0bde2f24e5acd0"><div class="ttname"><a href="classCronologia.html#aa707f72e69465459ba0bde2f24e5acd0">Cronologia::cron</a></div><div class="ttdeci">map&lt; int, FechaHistorica &gt; cron</div><div class="ttdef"><b>Definition:</b> <a href="cronologia_8h_source.html#l00037">cronologia.h:37</a></div></div>
+<div class="ttc" id="classCronologia_html"><div class="ttname"><a href="classCronologia.html">Cronologia</a></div><div class="ttdoc">T.D.A. Cronologia. </div><div class="ttdef"><b>Definition:</b> <a href="cronologia_8h_source.html#l00035">cronologia.h:35</a></div></div>
+<div class="ttc" id="classFechaHistorica_html"><div class="ttname"><a href="classFechaHistorica.html">FechaHistorica</a></div><div class="ttdef"><b>Definition:</b> <a href="FechaHistorica_8h_source.html#l00016">FechaHistorica.h:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<hr>
+<small>ETS Ingeniería Informática y Telecomunicaciones. Universidad de Granada.
+</small>

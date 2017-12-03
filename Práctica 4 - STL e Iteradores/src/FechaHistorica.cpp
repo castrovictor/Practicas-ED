@@ -4,6 +4,7 @@
 #include <ostream>
 #include <iostream>
 
+
 typedef set<string>::iterator iterador;
 typedef set<string>::const_iterator const_iterator;
 
@@ -13,11 +14,6 @@ FechaHistorica::FechaHistorica(const FechaHistorica& f) {
   year = f.year;
   eventos = f.eventos;
  }
-
-iterador FechaHistorica::begin(){
-	return this->begin();
-	}
-
 
   int FechaHistorica::getYear() const{
     return year;
@@ -63,9 +59,9 @@ iterador FechaHistorica::begin(){
 ostream& operator<< (ostream& os, const FechaHistorica& e) {
     os << e.getYear();
 
-    for(const_iterator p = e.eventos.begin(); p != e.eventos.end(); ++p) 
+    for(const_iterator p = e.eventos.begin(); p != e.eventos.end(); ++p)
     	os << SEP << *p << flush;
-		
+
 
     return os;
 }

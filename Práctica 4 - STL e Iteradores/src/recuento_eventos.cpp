@@ -28,7 +28,7 @@ int main(int argc, char * argv[]){
    cout << "El número total de años es " << nyears << endl;
    cout << "El número total de eventos guardados es " << neventos << endl;
    cout << "El máximo de eventos por año es " << nmax << endl;
-   cout << "El promedio de eventos por año es " << promedio;
+   cout << "El promedio de eventos por año es " << promedio << endl;
 
 
 }
