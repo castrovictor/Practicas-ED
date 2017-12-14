@@ -5,6 +5,7 @@
 #include <math.h>
 #include <algorithm>
 
+
 QuienEsQuien::QuienEsQuien(){}
 
 QuienEsQuien::QuienEsQuien(const QuienEsQuien &quienEsQuien){
@@ -32,7 +33,7 @@ void QuienEsQuien::limpiar(){
 	atributos.clear();
 	tablero.clear();
 	arbol.clear();
-	jugada_actual = 0;
+	jugada_actual.remove();
 }
 
 template <typename T>
@@ -205,7 +206,7 @@ vector<bool> convertir_a_vector_bool(int n, int digitos) {
   return ret;
 }
 
-/*Pregunta mejor_pregunta(vector<string> atr, vector<string> personajes, vector<vector<bool>> tab){
+Pregunta mejor_pregunta(vector<string> atr, vector<string> personajes, vector<vector<bool>> tab){
 	if(personajes.size() = 1){
 		Pregunta question(personajes[0], 1);
 		return question;
@@ -236,7 +237,7 @@ vector<bool> convertir_a_vector_bool(int n, int digitos) {
 
 	Pregunta question(atr[i_min], personajes.size());
 	return question;
-}*/
+}
 
 int mejor_pregunta(vector<vector<bool>> tab){
 	int cont;
@@ -257,31 +258,32 @@ int mejor_pregunta(vector<vector<bool>> tab){
 
 		prop = cont / size;
 		distance = abs(0.5-prop);
-		if(minimum != min(minimum, distance) {
-			minimun = min(minimum, distance);
+		if(minimum != min(minimum, distance)) {
+			minimum = min(minimum, distance);
 			i_min = i;
 		}
+	}
 
 
 return i_min;
 }
 
-node insertNode(vector<string> atr, vector<string> personajes, vector<vector<bool>> tab,const node& padre){
+/*nodo QuienEsQuien::insertNode(vector<string> atr, vector<string> personajes, vector<vector<bool>> tab,const nodo& padre){
 
-	if(personajes.size() = 1){
+	if(personajes.size() == 1){
 		Pregunta personaje(personajes[0],1);
-		node hoja(question);
-		hoja.parent(padre);
-		hoja.left(NULL);
-		hoja.right(NULL);
+	/	nodo hoja(personaje);
+		hoja.elnodo->pad = padre;
+		hoja.elnodo->izda = NULL;
+		hoja.elnodo->dcha = NULL;
 
 		return hoja;
 	}
 
 	int q = mejor_pregunta(atr, personajes, tab);
 	Pregunta bestQ(atr[q],personajes.size());
-	node nodo(bestQ);
-	nodo.parent(padre);
+	nodo nd(bestQ);
+	nd.parent(padre);
 
 	vector<vector<bool>>::iterator i;
 	int pos = 0;
@@ -298,7 +300,7 @@ node insertNode(vector<string> atr, vector<string> personajes, vector<vector<boo
 				i->erase(tab[i].begin()+q);
 	}
 
-	nodo.left(insertNode(atrNO,personajesNO,tabNO,*this));
+	nd.elnodo(insertNode(atrNO,personajesNO,tabNO,*this));
 
 	//Creamos el hijo a la derecha, respuesta afirmativa
 	pos = 0;
@@ -314,21 +316,112 @@ node insertNode(vector<string> atr, vector<string> personajes, vector<vector<boo
 				i->erase(tab[i].begin()+q);
 	}
 
-	nodo.right(insertNode(atrSI,personajesSI,tabSI,*this));
+	nd.right(insertNode(atrSI,personajesSI,tabSI,*this));
 
-	return nodo;
+	return nd;
+}*/
+
+
+
+
+bintree<Pregunta> QuienEsQuien::explorarArbol(vector<string> atr, vector<string> personajes, vector<vector<bool>> tab) {
+	if (personajes.size() == 1) {
+			return bintree<Pregunta>(mejor_pregunta(atr, personajes,tab));
+	}
+
+	Pregunta bestQ(mejor_pregunta(atr, personajes,tab));
+
+	vector<vector<bool>>::iterator i;
+	int pos = 0;
+	int q = mejor_pregunta(atr, personajes,tab);
+	vector<string> atrNO(atr);
+	vector<string> personajesNO(personajes);
+	vector<vector<bool>> tabNO(tab);
+	//Creamos el hijo a la izquierda, respuesta negativa
+	for(i = tab.begin(); i != tab.end(); ++i) {
+		if( i->at(q) ){ //qutiamos los personajes que tengan respuesta positiva
+			personajesNO.erase(personajesNO.begin()+pos);
+			atrNO.erase(i);
+		} else {
+				pos++;
+				i->erase(tab[i].begin()+q);
+			}}
+	}
+
+	bintree<Pregunta> arbolActual(bestQ);
+	bintree<Pregunta> arbolNO = explorarArbol(atrNO, personajesNO, tabNO);
+	arbolActual.insert_left(arbolActual.root(), arbolNO);
+
+	pos = 0;
+	vector<string> atrSI(atr);
+	vector<string> personajesSI(personajes);
+	vector<vector<bool>> tabSI(tab);
+	for(i = tab.begin(); i != tab.end(); ++i) {
+		if( !(i->at(q)) ){ //Quitamos los personajes que tengan respuesta negativa
+			personajesSI.erase(personajesSi.begin()+pos);
+			atrSI.erase(i);
+		} else {
+				pos++;
+				i->erase(tab[i].begin()+q);
+			}
+	}
+
+	bintree<Pregunta> arbolSI = explorarArbol(atrSI, personajesSI, tabSI);
+	arbolActual.insert_right(arbolActual.root(), arbolSI);
+
+	return arbolActual;
+}
+
+Pregunta QuienEsQuien::insertNode(vector<string> atr, vector<string> personajes, vector<vector<bool>> tab){
+
+	if(personajes.size() == 1){
+			return mejor_pregunta(atr, personajes,tab);
+	}
+
+	Pregunta bestQ(mejor_pregunta(atr, personajes,tab));
+
+	vector<vector<bool>>::iterator i;
+	int pos = 0;
+	vector<string> atrNO(atr);
+	vector<string> personajesNO(personajes);
+	vector<vector<bool>> tabNO(tab);
+	//Creamos el hijo a la izquierda, respuesta negativa
+	for(i = tab.begin(); i != tab.end(); ++i) {
+		if( i->at(q) ){ //qutiamos los personajes que tengan respuesta positiva
+			personajesNO.erase(personajesNO.begin()+pos);
+			atrNO.erase(i);
+		} else
+				pos++;
+				i->erase(tab[i].begin()+q);
+	}
+
+	insert_left(*this, insertNode(atrNO,personajesNO,tabNO) );
+
+	//Creamos el hijo a la derecha, respuesta afirmativa
+	pos = 0;
+	vector<string> atrSI(atr);
+	vector<string> personajesSI(personajes);
+	vector<vector<bool>> tabSI(tab);
+	for(i = tab.begin(); i != tab.end(); ++i) {
+		if( !(i->at(q)) ){ //Quitamos los personajes que tengan respuesta negativa
+			personajesSI.erase(personajesSi.begin()+pos);
+			atrSI.erase(i);
+		} else
+				pos++;
+				i->erase(tab[i].begin()+q);
+	}
+
+		insert_left(*this, insertNode(atrSI,personajesSI,tabSI));
+
+	return bestQ;
 }
 
 
 
 bintree<Pregunta> QuienEsQuien::crear_arbol()
 {
-	//Primero vemos cual es la mejor pregunta:
+ 	bintree<Pregunta> arbol;
 
-
-
-
-	bintree<Pregunta> arbol;
 	return arbol;
 }
 
