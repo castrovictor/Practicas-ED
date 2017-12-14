@@ -190,6 +190,10 @@ public:
 	  * @param numero_de_personajes N�mero de personajes que tiene el tablero a crear.
 	  */
 	void tablero_aleatorio(int numero_de_personajes);
+
+
+
+	bintree<Pregunta> explorarArbol(vector<string> atr, vector<string> personajes, vector<vector<bool>> tab);
 };
 
 #endif

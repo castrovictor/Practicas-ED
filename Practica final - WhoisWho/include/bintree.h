@@ -116,7 +116,7 @@ public:
   */
   void prune_right(node n, bintree<T> & dest);
 
-  /**
+  /**}
      @brief Insertar un nodo como hijo a la izquierda de un nodo.
      
      @param n: nodo del receptor. !n.null().

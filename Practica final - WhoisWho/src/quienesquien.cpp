@@ -239,7 +239,7 @@ Pregunta mejor_pregunta(vector<string> atr, vector<string> personajes, vector<ve
 	return question;
 }
 
-int mejor_pregunta(vector<vector<bool>> tab){
+int imejor_pregunta(vector<vector<bool>> tab){
 	int cont;
 	int size = tab[0].size();
 	double prop;
@@ -333,7 +333,7 @@ bintree<Pregunta> QuienEsQuien::explorarArbol(vector<string> atr, vector<string>
 
 	vector<vector<bool>>::iterator i;
 	int pos = 0;
-	int q = mejor_pregunta(atr, personajes,tab);
+	int q = imejor_pregunta(atr, personajes,tab);
 	vector<string> atrNO(atr);
 	vector<string> personajesNO(personajes);
 	vector<vector<bool>> tabNO(tab);
