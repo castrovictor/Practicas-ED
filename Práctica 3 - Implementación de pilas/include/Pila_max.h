@@ -1,3 +1,4 @@
+//Documento para decidir qué implentación utiliza la pila
 #define CUAL_COMPILA 1
 #if CUAL_COMPILA==1
 #include <Pila_max_VD.h>
