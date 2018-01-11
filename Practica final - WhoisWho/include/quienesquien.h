@@ -18,12 +18,13 @@
 #include <set>
 #include <sstream>
 
+#include <stack>
+#include <utility>
+
 #include "pregunta.h"
 #include "bintree.h"
 
 using namespace std;
-
-typedef bintree<Pregunta>::node nodo;
 
 /**
  * @brief T.D.A. QuienEsQuien
@@ -32,6 +33,13 @@ typedef bintree<Pregunta>::node nodo;
  */
 class QuienEsQuien{
 private:
+	
+	/**
+	  * @brief Si modo de juego es 1, entonces hara las mejores preguntas en cada momento, si esta en 0, las hará en orden
+	  */
+	int MODO_MEJORADO = 1;
+
+
 	/**
 	  * @brief Almacena el nombre de los personajes. Su �ndice en
 	  *        este vector corresponde con el �ndice de su
@@ -62,6 +70,50 @@ private:
 	  *        actual.
 	  */
 	bintree<Pregunta>::node jugada_actual;
+
+	/**
+	  * @brief Crea el arbol de forma iterativa
+	  * @param arbol 
+	  * @param nodo nodo por el que vamos
+	  * @param personajes
+	  * @param atributos
+	  * @param tablero
+	  */
+
+	void explorarArbol(bintree<Pregunta>& arbol, bintree<Pregunta>::node nodo, const vector<string> &personajes, const vector<string> &atributos, const vector<vector<bool> > &tablero);
+
+
+	/**
+	  * @brief Elimina nodos que son redundantes
+	  * @param nodo nodo donde estamos
+	  */
+	void eliminar_nodos_redundantes_recursivo(bintree<Pregunta>::node nodo);
+
+
+	/**
+	  * @brief Calcula la profundidad de los nodos de forma iterativa
+	  * @param depth profundidad que tiene cuado llamas a la funcion
+	  * @param nodo nodo donde estamos
+	  * @param v vector donde se van guardando las profundidad al llegar a hojas
+	  */
+	void profundidad(int depth, bintree<Pregunta>::node nodo,vector<int> & v );
+
+
+	/**
+	  * @brief Devuelve la pregunta que toca preguntar, ya sea la mejor pregunta, o la que toque, dependiendo de la opción de juego
+	  * @param atributos atributos que quedan
+	  * @param tablero tablero que hay
+	  * @return la pregunta
+	  */
+	string opcionPregunta(vector<string> atributos, vector<vector<bool>> tablero);
+
+	/**
+	  * @brief Busca los personajes a los que podemos llegar a partir de un nodo dado
+	  * @param personajes se guardan los personajes que hay
+	  * @param nodo nodo del que partimos
+	  */
+	void buscar_personajes(set<string>& personajes, bintree<Pregunta>::node nodo);
+
 public:
 	/**
 	  * @brief Constructor b�sico de la clase
@@ -126,9 +178,6 @@ public:
 	  */
 	void mostrar_estructuras_leidas();
 
-	//insertNode(vector<string> atr, vector<string> personajes, vector<vector<bool>> tab);
-
-
 	/**
 	  * @brief Este m�todo construye el �rbol de preguntas para todos los personajes del tablero.
 	  */
@@ -148,7 +197,7 @@ public:
 	void escribir_arbol_completo() const;
 
 	/**
-	   @brief M�todo que modifica el �rbol de preguntas para que no haya
+	   @brief M�todo que modifica el �rbol de preguntas para que haya
 	          preguntas redundantes.
 	   @post El �rbol de preguntas se modifica.
 	*/
@@ -186,14 +235,50 @@ public:
 
 	/**
 	  * @brief Rellena los datos del QuienEsQuien con un tablero calculado aleatoriamente.
-	  *
 	  * @param numero_de_personajes N�mero de personajes que tiene el tablero a crear.
 	  */
 	void tablero_aleatorio(int numero_de_personajes);
 
 
+	/**
+	  * @brief Elimina un personaje
+	  * @param nombre Nombre del personaje a borrar
+	  */
+	void elimina_personaje(string nombre);
 
-	bintree<Pregunta> explorarArbol(vector<string> atr, vector<string> personajes, vector<vector<bool>> tab);
+	/**
+	  * @brief Preguntas que se han formulado hasta el momento
+	  * @param jugada Nodo donde nos encontramos.
+	  * @return Pila con todas las preguntas formuladas
+	  */
+	stack<pair<string,string>> preguntas_formuladas(bintree<Pregunta>::node jugada);
+
+	/**
+	  * @brief Añade un personaje nuevo al tablero
+	  * @param nombre Nombre del nuevo personaje.
+	  * @param caracteristicas Nuevas características del personaje
+	  *
+	  * @pre Debe tener atributos distintos a los demás personajes
+	  */
+	void aniade_personaje(string nombre, vector<bool> caracteristicas);
+
+		/**
+	  * @brief Devuelve el modo de juego
+	  * @return Modo de juego
+	  */
+	int modo_juego();
+
+	/**
+	  * @brief Nos permite escoger el modo de juego.
+	  * @param i Modo de juego: 1 = mejorado, 0 = no mejorado.
+	  */
+	void set_modo_juego(int i);
+
+	/**
+	  * @brief Devuelve el numero de atributos que tiene el tablero
+	  * @return devuelve el nuevo de atributos que tiene el tablero
+	  */
+	int numero_de_atributos();
 };
 
 #endif

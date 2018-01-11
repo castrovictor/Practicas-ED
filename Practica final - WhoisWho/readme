@@ -1,0 +1,6 @@
+Cuando se inicia una partida, se pregunta si se desea jugar con el árbol de preguntas optimizado. De esta forma, se minimiza el número de preguntas necesarias que hay que realizar para averiguar el personaje.
+Para las funciones extra de añadir y eliminar personaje, se pregunta si se desea añadir o eliminar personaje antes de comenzar la partida.
+El makefile cuenta con la orden make jugar, que compila el proyecto y carga automáticamente un tablero de datos. Para generar la documentación, hay que ejecutar make documentacion.
+Para comprimir y borrar, cuenta con las órdenes zip y clean respectivamente.
+
+La memoria se encuentra en la  carpeta documentación.
