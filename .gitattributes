@@ -1,1 +1,2 @@
-*.gs linguist-language=C++
+* linguist-vendored
+*.cpp linguist-vendored=false
